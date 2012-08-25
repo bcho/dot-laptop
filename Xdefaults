@@ -1,0 +1,49 @@
+! font
+URxvt.font:xft:Monaco:pixelsize=15:xft:WenQuanYi Micro Hei:pixelsize=13
+
+! color
+URxvt.foreground:#FFFFFF
+!URxvt.background:#2E3436
+URxvt.color0:#2E3436
+URxvt.color1:#CC0000
+URxvt.color2:#4E9A06
+URxvt.color3:#C4A000
+URxvt.color4:#3465A4
+URxvt.color5:#75507B
+URxvt.color6:#06989A
+URxvt.color7:#D3D7CF
+URxvt.color8:#555753
+URxvt.color9:#EF2929
+URxvt.color10:#8AE234
+URxvt.color11:#FCE94F
+URxvt.color12:#729FCF
+URxvt.color13:#AD7FA8
+URxvt.color14:#34E2E2
+URxvt.color15:#EEEEEC
+
+! follow URL
+URxvt.urlLauncher:chromium
+URxvt.matcher.button:1
+Urxvt.perl-ext-common:matcher
+
+! scrollbar
+URxvt.scrollBar:False
+!URxvt.scrollBar_right:True
+!URxvt.scrollBar_floating:False
+!URxvt.scrollstyle:plain
+URxvt.saveLines:500
+
+! other
+! Rxvt.preditType:Root
+
+! URxvt.perl-ext-common: default,tabbed
+! URxvt.tabbed.tabbar-fg: #FFFFFF
+! URxvt.tabbed.tabbar-bg: rgba:1111/1111/1111/9999
+! URxvt.tabbed.tag-fg: 0 
+! URxvt.tabbed.tab-bg: rgba:1111/1111/1111/9999
+
+! transpartent
+URxvt.depth: 32
+URxvt.background: rgba:1111/1111/1111/DDDD
+
+!URxvt.InputMethod: ibus

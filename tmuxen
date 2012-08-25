@@ -1,0 +1,19 @@
+#!/bin/sh
+
+cmd=$(which tmux)
+session=halo
+
+if [ -z $cmd ]; then
+    echo "You need to intall tmux."
+    exit 1
+fi
+
+$cmd has -t $session
+
+if [ $? != 0 ]; then
+    $cmd new -d -n zs -s $session "zsh"
+fi
+
+$cmd att -t $session
+
+exit 0
