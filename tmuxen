@@ -11,7 +11,9 @@ fi
 $cmd has -t $session
 
 if [ $? != 0 ]; then
-    $cmd new -d -n zs -s $session "zsh"
+    $cmd new -d -n zsh -s $session "zsh"
+    $cmd neww -n goagent -t $session "python2 /home/hbc/workshop/goagent/local/proxy.py"
+    $cmd selectw -t $session:1
 fi
 
 $cmd att -t $session

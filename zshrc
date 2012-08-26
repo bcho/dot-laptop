@@ -16,6 +16,7 @@ alias dv="deactivate"
 alias python='python2'
 alias pip='pip2'
 alias tm=$dot_file/tmuxen
+alias goagent='python ~/workshop/goagent/local/proxy.py'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
