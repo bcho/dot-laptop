@@ -10,9 +10,7 @@
 		</item>
 		<item label="terminal">
 			<action name="Execute">
-				<execute>
-					urxvt
-				</execute>
+				<execute>terminator</execute>
 			</action>
 		</item>
 		<item label="chromium">

@@ -40,7 +40,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>1977-BlueLite</name>
+    <name>1977-Blue</name>
     <titleLayout>DLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -145,7 +145,7 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>26</top>
+    <top>0</top>
     <bottom>0</bottom>
     <left>0</left>
     <right>0</right>
@@ -156,11 +156,11 @@
     <floatingX>0</floatingX>
     <floatingY>0</floatingY>
     <noStrut>no</noStrut>
-    <stacking>Above</stacking>
+    <stacking>Normal</stacking>
     <!-- 'Above', 'Normal', or 'Below' -->
     <direction>Vertical</direction>
     <!-- 'Vertical' or 'Horizontal' -->
-    <autoHide>no</autoHide>
+    <autoHide>yes</autoHide>
     <hideDelay>300</hideDelay>
     <!-- in milliseconds (1000 = 1 second) -->
     <showDelay>300</showDelay>
@@ -313,11 +313,6 @@
       <action name="NextWindow">
         <panels>yes</panels>
         <desktop>yes</desktop>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioLowerVolume">
-      <action name="Execute">
-        <execute>amixer set Master 5- unmute</execute>
       </action>
     </keybind>
     <keybind key="W-r">

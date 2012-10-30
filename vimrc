@@ -13,7 +13,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'othree/html5.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'groenewege/vim-less'
-" Bundle 'vim-srcipts/EasyMotion'
+"Bundle 'vim-srcipts/EasyMotion'
 Bundle 'scrooloose/syntastic'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
@@ -90,7 +90,16 @@ nnoremap <c-a> <c-w>
 " command
 nnoremap <leader>p vi(d<ESC>
 nnoremap <leader>u viwU<ESC>e
+inoremap <leader>u <ESC>viwU<ESC>ea
 nnoremap <leader>m :w <BAR> !lessc static/css/style.less static/css/style.css<CR><space>
+
+"   resize buffer
+if bufwinnr(1)
+    nnoremap > <C-W>>
+    nnoremap < <C-W><
+    nnoremap + <C-W>+
+    nnoremap - <C-W>-
+endif
 
 " plugin
 let g:user_zen_settings = {
