@@ -13,10 +13,12 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'othree/html5.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'groenewege/vim-less'
-"Bundle 'vim-srcipts/EasyMotion'
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/syntastic'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'sophacles/vim-processing'
 
 " basic settings
 set modelines=0
@@ -41,7 +43,7 @@ set relativenumber
 " theme
 set wrap
 set textwidth=79
-set formatoptions=qrn1
+set formatoptions=qrn1m
 set colorcolumn=80
 " font
 set guifont=Monaco\ 11
@@ -69,8 +71,10 @@ map <silent> <F2> :if &guioptions =~# 'T' <Bar>
 
 " personal
 let mapleader = ','
+let g:EasyMotion_leader_key = '<Leader>'
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+set nofoldenable
 " key mapping
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -109,7 +113,7 @@ let g:user_zen_settings = {
 \}
 
 " indent
-au FileType html setl sw=2 sts=2 et
+au FileType html setl sw=2 sts=2 et colorcolumn=0
 au FileType css setl sw=2 sts=2 et
 au FileType less setl sw=2 sts=2 et
 

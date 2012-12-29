@@ -30,18 +30,25 @@ alias tm=${dot_file}tmuxen
 alias goagent='python ~/workshop/goagent/local/proxy.py'
 alias pasteit='xclip -o'
 alias pi=pasteit
-alias proxy='echo 127.0.0.1:8087' # goagent
+alias px='proxychains'
 alias ev='vim ~/.zshrc'
 alias sv='source ~/.zshrc'
 alias sd='sudo'
 alias gip='git clone `pi`'
 alias gj_solve='python ~/workshop/dsibh/gj_elimination/main.py'
 alias tellme='apropos'
+alias vbox='sd modprobe vboxdrv && sd modprobe vboxnetflt && sd modprobe vboxnetadp'
+alias lx='python ~/workshop/other/xunlei-lixian/lixian_cli.py'
+alias t='python ~/workshop/misc/t/t.py --task-dir ~/Documents/tasks --list tasks'
+alias ohnotes='python ~/workshop/ohnotes/run.py'
+alias upnotes='ohnotes update -p $notes'
 
 # a bit awkward :)
 alias wee='ln -s ~/workshop/wee/*.less . && rm variables.less && cp ~/workshop/wee/variables.less .'
 alias tdark='feh --bg-center ~/Documents/Pictures/dark'
-alias tlight='feh --bg-fill ~/Documents/Pictures/light'
+alias tlight='feh --bg-tile ~/Documents/Pictures/light'
+alias b='acpi'
+alias vsheep='source ~/workshop/other/sheep/venv/bin/activate'
 
 # for fun
 alias csf='fortune linux science definitions | cowsay -f small'
@@ -66,7 +73,7 @@ alias music='mplayer -shuffle -playlist ~hbc/Documents/Music/all -vo null'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vi-mode battery)
+plugins=(git battery)
 
 source $ZSH/oh-my-zsh.sh
 
