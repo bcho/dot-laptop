@@ -10,13 +10,15 @@
 		</item>
 		<item label="terminal">
 			<action name="Execute">
-				<execute>terminator</execute>
+				<execute>
+					xfce4-terminal
+				</execute>
 			</action>
 		</item>
-		<item label="chromium">
+		<item label="chrome">
 			<action name="Execute">
 				<execute>
-					chromium
+					google-chrome
 				</execute>
 			</action>
 		</item>
@@ -25,7 +27,9 @@
 		<menu id="root-menu-473353" label="utility">
 			<item label="thunar">
 				<action name="Execute">
-					<execute>thunar</execute>
+					<execute>
+						thunar
+					</execute>
 				</action>
 			</item>
 			<item label="gVim">
@@ -37,7 +41,6 @@
 			</item>
 		</menu>
 		<separator/>
-		<menu id="Debian"/>
 		<item label="ObConf">
 			<action name="Execute">
 				<execute>

@@ -46,4 +46,4 @@ URxvt.saveLines:500
 URxvt.depth: 32
 URxvt.background: rgba:1111/1111/1111/BBBB
 
-URxvt.InputMethod: ibus
+!URxvt.InputMethod: ibus

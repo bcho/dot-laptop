@@ -19,6 +19,11 @@ Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'sophacles/vim-processing'
+Bundle 'vim-scripts/fcitx.vim'
+Bundle "pangloss/vim-javascript"
+Bundle "terryma/vim-multiple-cursors"
+Bundle 'esukram/vim-taglist'
+" Bundle 'kchmck/vim-coffee-script'
 
 " basic settings
 set modelines=0
@@ -88,14 +93,16 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 inoremap jk <esc>
-inoremap <esc> <nop>
+" inoremap <esc> <nop>
 nnoremap <c-a> <c-w>
 
 " command
 nnoremap <leader>p vi(d<ESC>
+nnoremap <leader>o F>l<ESC>dw<ESC>
 nnoremap <leader>u viwU<ESC>e
 inoremap <leader>u <ESC>viwU<ESC>ea
 nnoremap <leader>m :w <BAR> !lessc static/css/style.less static/css/style.css<CR><space>
+nnoremap <leader>c :TlistToggle<CR>
 
 "   resize buffer
 if bufwinnr(1)
@@ -116,6 +123,11 @@ let g:user_zen_settings = {
 au FileType html setl sw=2 sts=2 et colorcolumn=0
 au FileType css setl sw=2 sts=2 et
 au FileType less setl sw=2 sts=2 et
+au FileType scss setl sw=2 sts=2 et
+au FileType rml setl sw=2 sts=2 et colorcolumn=0
+au FileType xml setl sw=4 sts=4 et colorcolumn=0
+au FileType json setl sw=2 sts=2 et colorcolumn=0
+au FileType pde setl sw=2 sts=2 et colorcolumn=79
 
 " END
 filetype plugin indent on

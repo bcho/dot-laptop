@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="r"
 
 # some config stuffs
 export EDITOR=vim
@@ -21,7 +21,7 @@ export thoughts="/home/hbc/Documents/Randoms/"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias gcc="gcc -Wall"  # always use Wall
-alias vv="source bin/activate"
+alias vv="source venv/bin/activate"
 alias dv="deactivate"
 alias python='python2'
 #alias pip='pip2'
@@ -42,6 +42,11 @@ alias lx='python ~/workshop/other/xunlei-lixian/lixian_cli.py'
 alias t='python ~/workshop/misc/t/t.py --task-dir ~/Documents/tasks --list tasks'
 alias ohnotes='python ~/workshop/ohnotes/run.py'
 alias upnotes='ohnotes update -p $notes'
+alias ss='killall ssh & sleep 1s && ssh -p223 -qTfnN -D7777 jp.fanhe.org'
+alias extract='dtrx'
+alias ssocks='python ~/workshop/other/shadowsocks/local.py'
+alias fmc='~/workshop/other/fmc/fmc'
+alias fmd='~/workshop/fmd/fmd'
 
 # a bit awkward :)
 alias wee='ln -s ~/workshop/wee/*.less . && rm variables.less && cp ~/workshop/wee/variables.less .'
@@ -49,6 +54,9 @@ alias tdark='feh --bg-center ~/Documents/Pictures/dark'
 alias tlight='feh --bg-tile ~/Documents/Pictures/light'
 alias b='acpi'
 alias vsheep='source ~/workshop/other/sheep/venv/bin/activate'
+alias xon='xrandr --output LVDS1 --auto --output VGA1 --mode 1440x900_60.00 --left-of LVDS1'
+alias xoff='xrandr --output VGA1 --off --output LVDS1 --auto'
+alias chromium-browser='chromium'
 
 # for fun
 alias csf='fortune linux science definitions | cowsay -f small'
@@ -77,8 +85,14 @@ plugins=(git battery)
 
 source $ZSH/oh-my-zsh.sh
 
+compctl -g '~/.teamocil/*(:t:r)' teamocil
+
 # Customize to your needs...
-export PATH=/home/hbc/.gem/ruby/1.9.1/bin:/var/lib/gems/1.9.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/hbc/.local/bin:/home/hbc/bin:/home/hbc/workshop/misc
+export PATH=/home/hbc/.gem/ruby/2.0.0/bin:/var/lib/gems/2.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/hbc/.local/bin:/home/hbc/bin:/home/hbc/workshop/misc:/usr/bin/npm:/usr/bin/node:/usr/local/lib:$PATH
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
 
 # startup
 # csf
