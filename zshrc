@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="r"
+ZSH_THEME="prose"
 
 # some config stuffs
 export EDITOR=vim
@@ -47,6 +47,7 @@ alias extract='dtrx'
 alias ssocks='python ~/workshop/other/shadowsocks/local.py'
 alias fmc='~/workshop/other/fmc/fmc'
 alias fmd='~/workshop/fmd/fmd'
+alias pod_cut='~/workshop/podcast/cut.sh'
 
 # a bit awkward :)
 alias wee='ln -s ~/workshop/wee/*.less . && rm variables.less && cp ~/workshop/wee/variables.less .'
@@ -57,6 +58,8 @@ alias vsheep='source ~/workshop/other/sheep/venv/bin/activate'
 alias xon='xrandr --output LVDS1 --auto --output VGA1 --mode 1440x900_60.00 --left-of LVDS1'
 alias xoff='xrandr --output VGA1 --off --output LVDS1 --auto'
 alias chromium-browser='chromium'
+alias alert_helper='history|tail -n1|sed -e "s/^\s*[0-9]\+\s*//" -e "s/;\s*alert$//"'
+alias alert='if [ $? -eq 0 ];then msgq "[$?] $(alert_helper)" -m cli -t ret.success; else msgq "[$?] $(alert_helper)" -m cli -t ret.fail; fi'
 
 # for fun
 alias csf='fortune linux science definitions | cowsay -f small'
@@ -88,11 +91,14 @@ source $ZSH/oh-my-zsh.sh
 compctl -g '~/.teamocil/*(:t:r)' teamocil
 
 # Customize to your needs...
-export PATH=/home/hbc/.gem/ruby/2.0.0/bin:/var/lib/gems/2.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/hbc/.local/bin:/home/hbc/bin:/home/hbc/workshop/misc:/usr/bin/npm:/usr/bin/node:/usr/local/lib:$PATH
+export PATH=/home/hbc/.gem/ruby/2.0.0/bin:/var/lib/gems/2.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/hbc/.local/bin:/home/hbc/bin:/home/hbc/workshop/misc:/usr/bin/npm:/usr/bin/node:/usr/local/lib:/usr/local/heroku/bin:$PATH
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
+
+export GOROOT=$HOME/workshop/temp/go
+export PATH=$PATH:$GOROOT/bin
 
 # startup
 # csf

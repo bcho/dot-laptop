@@ -20,9 +20,10 @@ Bundle 'mattn/gist-vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'sophacles/vim-processing'
 Bundle 'vim-scripts/fcitx.vim'
-Bundle "pangloss/vim-javascript"
-Bundle "terryma/vim-multiple-cursors"
+Bundle 'pangloss/vim-javascript'
+Bundle 'terryma/vim-multiple-cursors'
 Bundle 'esukram/vim-taglist'
+Bundle 'scrooloose/nerdcommenter'
 " Bundle 'kchmck/vim-coffee-script'
 
 " basic settings
@@ -121,6 +122,8 @@ let g:user_zen_settings = {
 
 " indent
 au FileType html setl sw=2 sts=2 et colorcolumn=0
+au FileType htmldjango setl sw=2 sts=2 et colorcolumn=0
+au FileType twig set ft=html
 au FileType css setl sw=2 sts=2 et
 au FileType less setl sw=2 sts=2 et
 au FileType scss setl sw=2 sts=2 et
@@ -128,6 +131,7 @@ au FileType rml setl sw=2 sts=2 et colorcolumn=0
 au FileType xml setl sw=4 sts=4 et colorcolumn=0
 au FileType json setl sw=2 sts=2 et colorcolumn=0
 au FileType pde setl sw=2 sts=2 et colorcolumn=79
+au FileType php colorscheme evening
 
 " END
 filetype plugin indent on

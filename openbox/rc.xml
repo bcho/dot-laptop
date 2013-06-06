@@ -794,7 +794,7 @@
   # end of the example
 -->
     <application name="xfce4-terminal">
-      <decor>no</decor>
+      <decor>yes</decor>
       <focus>yes</focus>
       <position>
         <x>center</x>
