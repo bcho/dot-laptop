@@ -48,6 +48,7 @@ alias ssocks='python ~/workshop/other/shadowsocks/local.py'
 alias fmc='~/workshop/other/fmc/fmc'
 alias fmd='~/workshop/fmd/fmd'
 alias pod_cut='~/workshop/podcast/cut.sh'
+alias vs='~/workshop/podcast/crop.sh'
 
 # a bit awkward :)
 alias wee='ln -s ~/workshop/wee/*.less . && rm variables.less && cp ~/workshop/wee/variables.less .'
