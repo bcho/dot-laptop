@@ -61,6 +61,7 @@ alias xoff='xrandr --output VGA1 --off --output LVDS1 --auto'
 alias chromium-browser='chromium'
 alias alert_helper='history|tail -n1|sed -e "s/^\s*[0-9]\+\s*//" -e "s/;\s*alert$//"'
 alias alert='if [ $? -eq 0 ];then msgq "[$?] $(alert_helper)" -m cli -t ret.success; else msgq "[$?] $(alert_helper)" -m cli -t ret.fail; fi'
+alias glcc='gcc -L/usr/X11R6/lib -lglut -lGLU -lGL -lGLEW -lX11 -lXmu -lXi'
 
 # for fun
 alias csf='fortune linux science definitions | cowsay -f small'
@@ -103,3 +104,9 @@ export PATH=$PATH:$GOROOT/bin
 
 # startup
 # csf
+
+# for wayland
+WLD=$HOME/workshop/temp/wayland
+LD_LIBRARY_PATH=$WLD/lib
+PKG_CONFIG_PATH=$WLD/lib/pkgconfig/:$WLD/share/pkgconfig/
+ACLOCAL="aclocal -I $WLD/share/aclocal"
