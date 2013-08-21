@@ -1,13 +1,10 @@
-# Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="prose"
 
-# some config stuffs
+# better cd
+. ~/workshop/other/z/z.sh
+
+# some basic stuffs
 export EDITOR=vim
 export GRAPHIC_EDITOR="gvim"
 
@@ -16,23 +13,27 @@ export dot_file="~/workshop/dot-laptop/"
 export notes="/home/hbc/Documents/Notes/"
 export thoughts="/home/hbc/Documents/Randoms/"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# reloaded!
+alias ev='vim ~/.zshrc'
+alias sv='source ~/.zshrc'
 
-alias gcc="gcc -Wall"  # always use Wall
+# always use Wall
+alias gcc="gcc -Wall"
+
+# for virtualvenv
 alias vv="source venv/bin/activate"
 alias dv="deactivate"
+
+# still stick to python2...
 alias python='python2'
-#alias pip='pip2'
+alias pip='pip2'
 alias virtualenv='virtualenv2'
+
+# shortcuts
 alias tm=${dot_file}tmuxen
-alias goagent='python ~/workshop/goagent/local/proxy.py'
 alias pasteit='xclip -o'
 alias pi=pasteit
 alias px='proxychains'
-alias ev='vim ~/.zshrc'
-alias sv='source ~/.zshrc'
 alias sd='sudo'
 alias gip='git clone `pi`'
 alias gj_solve='python ~/workshop/dsibh/gj_elimination/main.py'
@@ -42,34 +43,29 @@ alias lx='python ~/workshop/other/xunlei-lixian/lixian_cli.py'
 alias t='python ~/workshop/misc/t/t.py --task-dir ~/Documents/tasks --list tasks'
 alias ohnotes='python ~/workshop/ohnotes/run.py'
 alias upnotes='ohnotes update -p $notes'
-alias ss='killall ssh & sleep 1s && ssh -p223 -qTfnN -D7777 jp.fanhe.org'
 alias extract='dtrx'
 alias ssocks='python ~/workshop/other/shadowsocks/local.py'
 alias fmc='~/workshop/other/fmc/fmc'
 alias fmd='~/workshop/fmd/fmd'
 alias pod_cut='~/workshop/podcast/cut.sh'
 alias vs='~/workshop/podcast/crop.sh'
-
-# a bit awkward :)
-alias wee='ln -s ~/workshop/wee/*.less . && rm variables.less && cp ~/workshop/wee/variables.less .'
+alias sass='sass --no-cache' # no cache directory
 alias tdark='feh --bg-center ~/Documents/Pictures/dark'
 alias tlight='feh --bg-tile ~/Documents/Pictures/light'
-alias b='acpi'
-alias vsheep='source ~/workshop/other/sheep/venv/bin/activate'
+alias b='acpi' # for battery
 alias xon='xrandr --output LVDS1 --auto --output VGA1 --mode 1440x900_60.00 --left-of LVDS1'
 alias xoff='xrandr --output VGA1 --off --output LVDS1 --auto'
 alias chromium-browser='chromium'
 alias alert_helper='history|tail -n1|sed -e "s/^\s*[0-9]\+\s*//" -e "s/;\s*alert$//"'
 alias alert='if [ $? -eq 0 ];then msgq "[$?] $(alert_helper)" -m cli -t ret.success; else msgq "[$?] $(alert_helper)" -m cli -t ret.fail; fi'
 alias glcc='gcc -L/usr/X11R6/lib -lglut -lGLU -lGL -lGLEW -lX11 -lXmu -lXi'
-
-# for fun
+# just for fun
 alias csf='fortune linux science definitions | cowsay -f small'
 alias poem='fortune song100 tang300'
 alias music='mplayer -shuffle -playlist ~hbc/Documents/Music/all -vo null'
 
 # Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
@@ -100,10 +96,7 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
 export GOROOT=$HOME/workshop/temp/go
-export PATH=$PATH:$GOROOT/bin
-
-# startup
-# csf
+export PATH=$PATH:$GOROOT/bin:/usr/bin/vendor_perl
 
 # for wayland
 WLD=$HOME/workshop/temp/wayland
