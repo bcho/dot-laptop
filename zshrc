@@ -12,6 +12,7 @@ export GRAPHIC_EDITOR="gvim"
 export dot_file="~/workshop/dot-laptop/"
 export notes="/home/hbc/Documents/Notes/"
 export thoughts="/home/hbc/Documents/Randoms/"
+export snippets="/home/hbc/workshop/snippets/"
 
 # reloaded!
 alias ev='vim ~/.zshrc'
@@ -26,7 +27,7 @@ alias dv="deactivate"
 
 # still stick to python2...
 alias python='python2'
-alias pip='pip2'
+# alias pip='pip2'
 alias virtualenv='virtualenv2'
 
 # shortcuts
@@ -96,7 +97,12 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
 export GOROOT=$HOME/workshop/temp/go
-export PATH=$PATH:$GOROOT/bin:/usr/bin/vendor_perl
+export PATH=$PATH:$GOROOT/bin:/usr/bin/vendor_perl:$snippets
+
+# for android
+export ANDROID_SDK_ROOT="/home/hbc/workshop/android/adt-bundle-linux-x86_64-20130729/sdk"
+export PATH="$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH"
+
 
 # for wayland
 WLD=$HOME/workshop/temp/wayland

@@ -20,6 +20,8 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'editorconfig/editorconfig-vim'
+Bundle '~/workshop/kal-vim/.git'
 
 " basic settings
 set modelines=0
@@ -43,9 +45,11 @@ set textwidth=79
 set formatoptions=qrn1m
 set colorcolumn=80
 set foldmethod=indent
+set hlsearch
+set incsearch
 
 " font
-set guifont=Monaco\ 12
+set guifont=Monaco\ 11
 
 " color scheme
 syntax enable
@@ -92,7 +96,7 @@ nnoremap <c-a> <c-w>
 " commands
 nnoremap <leader>p vi(d<ESC>
 nnoremap <leader>o F>l<ESC>dw<ESC>
-inoremap <leader>u <ESC>viwU<ESC>ea
+inoremap <leader>i <ESC>viwU<ESC>ea
 
 " resize buffer
 if bufwinnr(1)
@@ -123,10 +127,16 @@ au FileType xml setl sw=4 sts=4 et colorcolumn=0
 au FileType json setl sw=2 sts=2 et colorcolumn=0
 au FileType pde setl sw=2 sts=2 et colorcolumn=79
 au FileType markdown setl sw=2 sts=2 et colorcolumn=80 textwidth=80
+            \             guifont=WenQuanyi\ Micro\ Hei\ Mono\ 12
 
 " encoding guessing
 " TODO reorder?
 set fileencodings=utf-8,gbk,cp936
+
+" syntastic
+let g:syntastic_mode_map = {
+            \ 'mode': 'active',
+            \ 'passive_filetypes': ['java'] }
 
 
 " EOF
