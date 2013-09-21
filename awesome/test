@@ -1,0 +1,3 @@
+#!/bin/sh
+
+Xephyr +extension RANDR -screen 800x600 :1 -ac & (sleep 1; env DISPLAY=:1 awesome -c rc.lua)
