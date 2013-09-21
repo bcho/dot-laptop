@@ -219,12 +219,13 @@ for s = 1, screen.count() do
     if s == 1 then
         right_layout:add(wibox.widget.systray())
     end
+    right_layout:add(baticon)
+    right_layout:add(batwidget)
     right_layout:add(clockicon)
     right_layout:add(textclock)
     right_layout:add(mylayoutbox[s])
-    right_layout:add(baticon)
-    right_layout:add(batwidget)
 
+    -- put them together
     local layout = wibox.layout.align.horizontal()
     layout:set_left(left_layout)
     layout:set_middle(mytasklist[s])
