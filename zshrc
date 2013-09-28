@@ -97,11 +97,15 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
 export GOROOT=$HOME/workshop/temp/go
-export PATH=$PATH:$GOROOT/bin:/usr/bin/vendor_perl:$snippets
+export PATH=$PATH:$GOROOT/bin:/usr/bin/vendor_perl:/usr/bin/site_perl:$snippets
 
 # for android
 export ANDROID_SDK_ROOT="/home/hbc/workshop/android/adt-bundle-linux-x86_64-20130729/sdk"
 export PATH="$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH"
+
+# for sml
+export SMLNJ_HOME="/usr/lib/smlnj"
+export PATH="/usr/bin/smlnj/bin:$PATH"
 
 
 # for wayland

@@ -70,7 +70,7 @@ local layouts = {
 tags = {
     -- pre screen settings
     settings =  {
-        {"alpha", "beta"},
+        {"alpha", "beta", "gamma"},
         {"alpha", "beta", "gamma", "delta"}
     }
 }
