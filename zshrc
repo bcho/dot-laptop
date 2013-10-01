@@ -30,8 +30,12 @@ alias python='python2'
 # alias pip='pip2'
 alias virtualenv='virtualenv2'
 
-# shortcuts
+# tmux stuffs
 alias tm=${dot_file}tmuxen
+alias tl='tmux list-sessions'
+alias ta='tmux attach-session -t'
+
+# shortcuts
 alias pasteit='xclip -o'
 alias pi=pasteit
 alias px='proxychains'
