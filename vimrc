@@ -23,6 +23,35 @@ Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle '~/workshop/kal-vim/.git'
 
+
+" helpers
+
+" presentation mode
+" code from
+" https://github.com/kaochenlong/eddie-vim/blob/master/plugin/settings/PresentationMode.vim
+function! PresentationModeOn()
+    set guifont=Monaco\ 25
+endfunction
+
+function! PresentationModeOff()
+    set guifont=Monaco\ 11
+endfunction
+
+function! TogglePrestationMode()
+    if !exists('w:presentation')
+        let w:presentation=0
+    endif
+
+    if w:presentation==0
+        call PresentationModeOn()
+        let w:presentation=1
+    else
+        call PresentationModeOff()
+        let w:presentation=0
+    endif
+endfunction
+
+
 " basic settings
 set modelines=0
 set shiftwidth=4
@@ -92,6 +121,7 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 inoremap jk <esc>
 nnoremap <c-a> <c-w>
+map <leader>P :call TogglePrestationMode()<CR>
 
 " commands
 nnoremap <leader>p vi(d<ESC>
@@ -127,7 +157,7 @@ au FileType xml setl sw=4 sts=4 et colorcolumn=0
 au FileType json setl sw=2 sts=2 et colorcolumn=0
 au FileType pde setl sw=2 sts=2 et colorcolumn=79
 au FileType markdown setl sw=2 sts=2 et colorcolumn=80 textwidth=80
-            \             guifont=WenQuanyi\ Micro\ Hei\ Mono\ 12
+            \             guifont=Zpix\ C.O.D.E\ 11
 
 " encoding guessing
 " TODO reorder?
