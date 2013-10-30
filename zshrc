@@ -36,6 +36,8 @@ alias tl='tmux list-sessions'
 alias ta='tmux attach-session -t'
 
 # shortcuts
+alias bu='xbacklight -inc 10'
+alias bd='xbacklight -dec 10'
 alias pasteit='xclip -o'
 alias pi=pasteit
 alias px='proxychains'

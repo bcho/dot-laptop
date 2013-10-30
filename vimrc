@@ -146,6 +146,7 @@ let g:user_emmet_settings = {
 
 " handle some special cases...
 au FileType html setl sw=4 sts=4 et colorcolumn=0
+            \         guifont=WenQuanYi\ Micro\ Hei\ Mono\ 12
 au FileType ejs setl sw=2 sts=2 et colorcolumn=0
 au FileType htmldjango setl sw=4 sts=4 et colorcolumn=0
 au FileType twig set ft=html
@@ -157,7 +158,8 @@ au FileType xml setl sw=4 sts=4 et colorcolumn=0
 au FileType json setl sw=2 sts=2 et colorcolumn=0
 au FileType pde setl sw=2 sts=2 et colorcolumn=79
 au FileType markdown setl sw=2 sts=2 et colorcolumn=80 textwidth=80
-            \             guifont=Zpix\ C.O.D.E\ 11
+            \             guifont=WenQuanYi\ Micro\ Hei\ Mono\ 12
+au FileType sml setl sw=2 sts=2 et
 
 " encoding guessing
 " TODO reorder?
