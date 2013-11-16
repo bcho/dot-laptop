@@ -14,7 +14,7 @@
             'http://book.douban.com',
             'http://movie.douban.com',
             'http://9.douban.com',
-            'http://digger.com/reader',
+            'http://digg.com/reader',
             'http://github.com',
             'http://coursera.org'
         ],
