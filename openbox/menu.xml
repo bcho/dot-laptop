@@ -15,10 +15,10 @@
 				</execute>
 			</action>
 		</item>
-		<item label="chrome">
+		<item label="Chrome">
 			<action name="Execute">
 				<execute>
-					google-chrome
+					google-chrome-stable
 				</execute>
 			</action>
 		</item>

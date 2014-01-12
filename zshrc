@@ -4,76 +4,16 @@ ZSH_THEME="prose"
 # better cd
 . ~/workshop/other/z/z.sh
 
-# some basic stuffs
+# autoenv
+source ~/.autoenv/activate.sh
+
+# editor settings
 export EDITOR=vim
 export GRAPHIC_EDITOR="gvim"
 
-# basic paths
-export dot_file="~/workshop/dot-laptop/"
-export notes="/home/hbc/Documents/Notes/"
-export thoughts="/home/hbc/Documents/Randoms/"
-export snippets="/home/hbc/workshop/snippets/"
-
-# reloaded!
+# reload zsh configurations
 alias ev='vim ~/.zshrc'
 alias sv='source ~/.zshrc'
-
-# always use Wall
-alias gcc="gcc -Wall"
-
-# for virtualvenv
-alias vv="source venv/bin/activate"
-alias dv="deactivate"
-
-# still stick to python2...
-alias python='python2'
-# alias pip='pip2'
-alias virtualenv='virtualenv2'
-
-# tmux stuffs
-alias tm=${dot_file}tmuxen
-alias tl='tmux list-sessions'
-alias ta='tmux attach-session -t'
-
-# shortcuts
-alias bu='xbacklight -inc 10'
-alias bd='xbacklight -dec 10'
-alias pasteit='xclip -o'
-alias pi=pasteit
-alias px='proxychains'
-alias sd='sudo'
-alias gip='git clone `pi`'
-alias gj_solve='python ~/workshop/dsibh/gj_elimination/main.py'
-alias tellme='apropos'
-alias vbox='sd modprobe vboxdrv && sd modprobe vboxnetflt && sd modprobe vboxnetadp'
-alias lx='python ~/workshop/other/xunlei-lixian/lixian_cli.py'
-alias t='python ~/workshop/misc/t/t.py --task-dir ~/Documents/tasks --list tasks'
-alias ohnotes='python ~/workshop/ohnotes/run.py'
-alias upnotes='ohnotes update -p $notes'
-alias extract='dtrx'
-alias ssocks='python ~/workshop/other/shadowsocks/local.py'
-alias fmc='~/workshop/other/fmc/fmc'
-alias fmd='~/workshop/fmd/fmd'
-alias pod_cut='~/workshop/podcast/cut.sh'
-alias vs='~/workshop/podcast/crop.sh'
-alias sass='sass --no-cache' # no cache directory
-alias tdark='feh --bg-center ~/Documents/Pictures/dark'
-alias tlight='feh --bg-tile ~/Documents/Pictures/light'
-alias b='acpi' # for battery
-alias xon='xrandr --output LVDS1 --auto --output VGA1 --mode 1440x900_60.00 --left-of LVDS1'
-alias xoff='xrandr --output VGA1 --off --output LVDS1 --auto'
-alias chromium-browser='chromium'
-alias alert_helper='history|tail -n1|sed -e "s/^\s*[0-9]\+\s*//" -e "s/;\s*alert$//"'
-alias alert='if [ $? -eq 0 ];then msgq "[$?] $(alert_helper)" -m cli -t ret.success; else msgq "[$?] $(alert_helper)" -m cli -t ret.fail; fi'
-alias glcc='gcc -L/usr/X11R6/lib -lglut -lGLU -lGL -lGLEW -lX11 -lXmu -lXi'
-alias wa='feh --bg-fill ~/Documents/Pictures/wallpaper'
-alias multi='autorandr -l multi; wa'
-alias big='multi; xrandr --output LVDS1 --off'
-alias laptop='autorandr -l laptop; xbacklight -set 29.5; wa'
-# just for fun
-alias csf='fortune linux science definitions | cowsay -f small'
-alias poem='fortune song100 tang300'
-alias music='mplayer -shuffle -playlist ~hbc/Documents/Music/all -vo null'
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
@@ -97,29 +37,44 @@ plugins=(git battery)
 
 source $ZSH/oh-my-zsh.sh
 
-compctl -g '~/.teamocil/*(:t:r)' teamocil
 
-# Customize to your needs...
-export PATH=/home/hbc/.gem/ruby/2.0.0/bin:/var/lib/gems/2.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/hbc/.local/bin:/home/hbc/bin:/home/hbc/workshop/misc:/usr/bin/npm:/usr/bin/node:/usr/local/lib:/usr/local/heroku/bin:$PATH
+# --------------------------------
+# CUSTOMIZE STARTS HERE
+# --------------------------------
 
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS="@im=fcitx"
+# --------------------------------
+# PATH SETTINGS
+# --------------------------------
 
-export GOROOT=$HOME/workshop/temp/go
-export PATH=$PATH:$GOROOT/bin:/usr/bin/vendor_perl:/usr/bin/site_perl:$snippets
+LOCAL_APP=$HOME/workshop/app
+LOCAL_APP_BIN=$LOCAL_APP/bin
 
-# for android
-export ANDROID_SDK_ROOT="/home/hbc/workshop/android/adt-bundle-linux-x86_64-20130729/sdk"
-export PATH="$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH"
+export PATH=$LOCAL_APP_BIN:$PATH
 
-# for sml
-export SMLNJ_HOME="/usr/lib/smlnj"
-export PATH="/usr/bin/smlnj/bin:$PATH"
+WORKSHOP=$HOME/workshop
 
+# --------------------------------
+# ALIAS
+# --------------------------------
 
-# for wayland
-WLD=$HOME/workshop/temp/wayland
-LD_LIBRARY_PATH=$WLD/lib
-PKG_CONFIG_PATH=$WLD/lib/pkgconfig/:$WLD/share/pkgconfig/
-ACLOCAL="aclocal -I $WLD/share/aclocal"
+# monitor brightness
+alias bu='xbacklight -inc 10'
+alias bd='xbacklight -dec 10'
+
+alias sd='sudo'  # not please, please!
+
+# tmux
+alias tl='tmux list-sessions'
+alias ta='tmux attach-session -t'
+
+alias gcc="gcc -Wall"  # always use Wall
+
+# virtualwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$WORKSHOP
+source ~/.local/bin/virtualenvwrapper.sh
+
+# go
+export GOPATH=$WORKSHOP/go
+export PATH=$PATH:$GOPATH/bin

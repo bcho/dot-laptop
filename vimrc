@@ -21,7 +21,6 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'editorconfig/editorconfig-vim'
-Bundle '~/workshop/kal-vim/.git'
 
 
 " helpers
@@ -169,6 +168,7 @@ set fileencodings=utf-8,gbk,cp936
 let g:syntastic_mode_map = {
             \ 'mode': 'active',
             \ 'passive_filetypes': ['java'] }
+let g:syntastic_python_checkers = ['flake8-python2', 'flake8']
 
 
 " EOF

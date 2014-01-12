@@ -305,7 +305,7 @@
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>gnome-screenshot</command>
+        <command>screenshot</command>
       </action>
     </keybind>
     <keybind key="A-Print">
@@ -794,7 +794,7 @@
 
   # end of the example
 -->
-    <application name="xfce4-terminal">
+    <!--application name="xfce4-terminal">
       <decor>yes</decor>
       <focus>yes</focus>
       <position>
@@ -805,7 +805,7 @@
       <desktop>2</desktop>
       <fullscreen>true</fullscreen>
       <maximized>true</maximized>
-    </application>
+    </application-->
     <application class="mplayer2" name="xv">
       <decor>no</decor>
       <focus>no</focus>
